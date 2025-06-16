@@ -1,8 +1,15 @@
-const sharp = require("sharp");
+const sharp = require('sharp');
+const fs = require('fs');
 
-// Convierte imágenes a WebP automáticamente
+// Convierte todas las imágenes a WebP
 async function optimizarImagenes() {
-  await sharp("assets/background.jpg")
-    .webp({ quality: 80 })
-    .toFile("assets/background.webp"); // 78% menos peso
+  const imagenes = fs.readdirSync('src/assets/originales');
+  
+  for (const img of imagenes) {
+    await sharp(`src/assets/originales/${img}`)
+      .webp({ quality: 80, lossless: true })
+      .toFile(`public/assets/${img.split('.')[0]}.webp`);
+  }
 }
+
+optimizarImagenes();
