@@ -1,23 +1,12 @@
 kalmadin/
-├── public/                  # Build final
+├── public/          # Build de producción
 ├── src/
-│   ├── core/
-│   │   ├── GameEngine.js    # Clase base para juegos
-│   │   └── Analytics.js     # Seguimiento de métricas
-│   ├── games/
-│   │   ├── Memoria/         # Juego completo
-│   │   ├── AdivinaNumero/
-│   │   └── PiedraPapel/
-│   ├── assets/
-│   │   ├── optimized/       # Imágenes en WebP
-│   │   └── sounds/
-│   ├── styles/
-│   │   ├── _variables.scss  # Variables globales
-│   │   └── main.scss        # Estilos compilados
-│   └── utils/
-│       ├── storage.js       # Gestión de datos
-│       └── helpers.js       # Funciones reutilizables
+│   ├── assets/      # Imágenes/sonidos optimizados (WebP/MP3)
+│   ├── core/        # Motor de juegos (GameEngine.js)
+│   ├── games/       # Lógica modular por juego
+│   ├── styles/      # SCSS con variables globales
+│   └── utils/       # Helpers (storage.js, analytics.js)
 ├── scripts/
-│   ├── build.js             # Proceso de compilación
-│   └── optimize-images.js   # Conversión a WebP
-└── webpack.config.js        # Bundling profesional
+│   ├── build.js     # Proceso de compilación
+│   └── optimize.js  # Conversión automática a WebP
+└── webpack.config.js

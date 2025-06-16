@@ -1,0 +1,8 @@
+/* css/variables.css */
+:root {
+  --primary: #6b5b95;
+  --breakpoint-mobile: 480px;
+}
+@media (max-width: var(--breakpoint-mobile)) {
+  .game-container { padding: 10px; }
+}
