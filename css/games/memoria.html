@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memoria | Kalmadin</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/games/memoria.css">
+</head>
+<body>
+  <header>
+    <a href="../index.html">← Volver</a>
+    <h1>🃏 Juego de Memoria</h1>
+  </header>
+
+  <main>
+    <div class="game-info">
+      <span id="movements">Movimientos: 0</span>
+      <span id="timer">Tiempo: 0s</span>
+    </div>
+    
+    <div class="memory-board" id="board"></div>
+  </main>
+
+  <script type="module">
+    import MemoriaGame from '../js/modules/MemoriaGame.js';
+    const game = new MemoriaGame();
+  </script>
+</body>
+</html>
