@@ -1,22 +1,21 @@
 /**
- * Guarda un record en localStorage
- * @function
- * @param {string} gameName - Nombre del juego
- * @param {number} score - Puntuación obtenida
+ * Sistema de records con validación de entorno
+ * @param {string} juego - Nombre del juego
+ * @param {number} puntos - Puntuación obtenida
  */
-export const saveRecord = (gameName, score) => {
-  const records = JSON.parse(localStorage.getItem('kalmadinRecords')) || {};
-  records[gameName] = records[gameName] 
-    ? Math.max(records[gameName], score) 
-    : score;
-  localStorage.setItem('kalmadinRecords', JSON.stringify(records));
-};
-
-/**
- * Obtiene records almacenados
- * @function
- * @returns {Object} Records de todos los juegos
- */
-export const getRecords = () => {
-  return JSON.parse(localStorage.getItem('kalmadinRecords')) || {};
+export const guardarRecord = (juego, puntos) => {
+  // Verificar disponibilidad de localStorage
+  if (typeof localStorage === "undefined") return;
+  
+  try {
+    const records = JSON.parse(localStorage.getItem("kalmadinRecords")) || {};
+    
+    // Solo guarda si es un nuevo récord
+    if (!records[juego] || puntos < records[juego]) {
+      records[juego] = puntos;
+      localStorage.setItem("kalmadinRecords", JSON.stringify(records));
+    }
+  } catch (error) {
+    console.error("Error en localStorage:", error);
+  }
 };

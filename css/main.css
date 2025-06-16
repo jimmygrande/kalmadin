@@ -1,0 +1,24 @@
+:root {
+  --color-primary: #6b5b95;
+  --color-secondary: #feb236;
+  --mobile-breakpoint: 768px;
+}
+
+/* Diseño mobile-first */
+.game-container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .game-container {
+    width: 80%;
+    max-width: 1200px;
+  }
+  
+  .game-card {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
