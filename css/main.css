@@ -1,24 +1,38 @@
+/* Variables globales */
 :root {
-  --color-primary: #6b5b95;
-  --color-secondary: #feb236;
+  --primary: #6b5b95;
+  --secondary: #feb236;
+  --background: #f5f5f5;
+  --text: #333;
   --mobile-breakpoint: 768px;
 }
 
-/* Diseño mobile-first */
-.game-container {
-  width: 95%;
-  margin: 0 auto;
-  padding: 15px;
+/* Reset y estilos base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-@media (min-width: 768px) {
-  .game-container {
-    width: 80%;
-    max-width: 1200px;
+/* Responsive mobile-first */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
   }
   
   .game-card {
-    flex-direction: row;
-    gap: 30px;
+    width: 95%;
+    margin: 10px auto;
   }
+}
+
+/* Contenedor de juegos */
+#game-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 15px;
 }

@@ -5,37 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kalmadin | Juegos Gratis</title>
   <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/header-footer.css">
+  <link rel="icon" href="./assets/icons/logo.svg" type="image/svg+xml">
 </head>
 <body>
-  <!-- Cabecera con navegación -->
   <header>
     <h1>🎮 Kalmadin</h1>
     <nav>
-      <a href="/">Inicio</a>
-      <a href="./games/memoria.html">Memoria</a>
-      <a href="./games/piedra-papel.html">Piedra/Papel/Tijera</a>
+      <a href="#" class="game-link" data-game="guess">🔢 Adivina el Número</a>
+      <a href="#" class="game-link" data-game="memory">🃏 Memoria</a>
+      <a href="#" class="game-link" data-game="rps">✊✋✌️ Piedra Papel Tijera</a>
     </nav>
   </header>
 
-  <!-- Listado de juegos -->
-  <main class="games-container">
-    <section class="game-card" onclick="location.href='./games/memoria.html'">
-      <h2>🃏 Juego de Memoria</h2>
-      <p>Encuentra los pares de cartas</p>
-    </section>
-    
-    <section class="game-card" onclick="location.href='./games/piedra-papel.html'">
-      <h2>✊✋✌️ Piedra, Papel o Tijera</h2>
-      <p>Clásico juego de manos</p>
-    </section>
+  <main id="game-container">
+    <!-- El juego se carga aquí dinámicamente -->
   </main>
 
-  <!-- Pie de página -->
-  <footer>
-    <p>© 2024 Kalmadin - Juegos Gratis para Todos</p>
-  </footer>
-
-  <script src="./js/main.js" type="module"></script>
+  <script src="./js/storage.js" defer></script>
+  <script src="./js/main.js" defer></script>
 </body>
 </html>
