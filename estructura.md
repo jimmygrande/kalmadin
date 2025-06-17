@@ -1,17 +1,14 @@
 kalmadin/
-├── index.html
+├── index.html                      # Página principal
 ├── css/
-│   └── main.css
+│   └── main.css                    # Estilos globales
 ├── js/
-│   ├── main.js
-│   ├── storage.js
-│   └── games/
-│       ├── GuessGame.js
-│       ├── MemoryGame.js       # Similar estructura
-│       └── RockPaperScissors.js
+│   ├── main.js                     # Navegación entre juegos
+│   ├── storage.js                  # Gestión de records
+│   └── games/                      # Lógica de cada juego
+│       ├── AdivinaNumero.js
+│       ├── Memoria.js
+│       └── PiedraPapel.js
 └── assets/
-    ├── icons/
-    │   └── logo.svg
-    └── sounds/
-        ├── click.mp3
-        └── win.mp3
+    └── icons/                      # Íconos SVG
+        └── logo.svg

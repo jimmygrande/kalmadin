@@ -1,5 +1,5 @@
-const StorageManager = {
-  saveRecord(game, score) {
+class StorageManager {
+  static saveRecord(game, score) {
     try {
       const records = JSON.parse(localStorage.getItem('kalmadinRecords')) || {};
       if (!records[game] || score < records[game]) {
@@ -8,19 +8,19 @@ const StorageManager = {
         return true;
       }
       return false;
-    } catch (e) {
-      console.error('Error al guardar récord:', e);
+    } catch (error) {
+      console.error('Error al guardar récord:', error);
       return false;
     }
-  },
+  }
   
-  getRecord(game) {
+  static getRecord(game) {
     try {
       const records = JSON.parse(localStorage.getItem('kalmadinRecords')) || {};
-      return records[game] || 0;
-    } catch (e) {
-      console.error('Error al obtener récord:', e);
-      return 0;
+      return records[game] || 'N/A';
+    } catch (error) {
+      console.error('Error al obtener récord:', error);
+      return 'N/A';
     }
   }
-};
+}

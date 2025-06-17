@@ -1,35 +1,34 @@
 class GameManager {
   constructor() {
-    this.currentGame = null;
     this.games = {
-      guess: new GuessGame(),
-      memory: new MemoryGame(),
-      rps: new RockPaperScissors()
+      adivina: new AdivinaGame(),
+      memoria: new MemoriaGame(),
+      piedrapapel: new PiedraPapelGame()
     };
     
-    this.initEventListeners();
+    this.setupNavigation();
   }
   
-  initEventListeners() {
-    document.querySelectorAll('.game-link').forEach(link => {
-      link.addEventListener('click', (e) => {
+  setupNavigation() {
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
         e.preventDefault();
-        this.loadGame(link.dataset.game);
+        const gameId = e.target.dataset.game;
+        this.loadGame(gameId);
       });
     });
   }
   
-  loadGame(gameType) {
-    if (this.games[gameType]) {
-      this.currentGame = this.games[gameType];
-      document.getElementById('game-container').innerHTML = 
-        this.currentGame.getHTML();
-      this.currentGame.init();
+  loadGame(gameId) {
+    const game = this.games[gameId];
+    if (game) {
+      document.getElementById('game-container').innerHTML = game.getHTML();
+      game.init();
     }
   }
 }
 
-// Inicialización cuando el DOM esté listo
+// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
   window.gameManager = new GameManager();
 });

@@ -11,17 +11,23 @@
   <header>
     <h1>🎮 Kalmadin</h1>
     <nav>
-      <a href="#" class="game-link" data-game="guess">🔢 Adivina el Número</a>
-      <a href="#" class="game-link" data-game="memory">🃏 Memoria</a>
-      <a href="#" class="game-link" data-game="rps">✊✋✌️ Piedra Papel Tijera</a>
+      <a href="#" data-game="adivina">🔢 Adivina el Número</a>
+      <a href="#" data-game="memoria">🃏 Memoria</a>
+      <a href="#" data-game="piedrapapel">✊✋✌️ Piedra Papel Tijera</a>
     </nav>
   </header>
 
   <main id="game-container">
-    <!-- El juego se carga aquí dinámicamente -->
+    <!-- Juego cargado dinámicamente -->
+    <div class="game-placeholder">
+      <p>Selecciona un juego para comenzar</p>
+    </div>
   </main>
 
   <script src="./js/storage.js" defer></script>
   <script src="./js/main.js" defer></script>
+  <script src="./js/games/AdivinaNumero.js" defer></script>
+  <script src="./js/games/Memoria.js" defer></script>
+  <script src="./js/games/PiedraPapel.js" defer></script>
 </body>
 </html>
